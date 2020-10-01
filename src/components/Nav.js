@@ -1,20 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { NavWrapper, LinksWrapper } from '../elements';
-import { LogoImage } from '../images';
+// import { Link } from 'react-router-dom';
+import { NavWrapper, StyledLink } from '../elements';
 
 export const Nav = ({ home }) => {
   return (
     <NavWrapper home={home}>
-      <LinksWrapper>
-        <Link to="/">
-          <LogoImage />
-        </Link>
-      </LinksWrapper>
-      <LinksWrapper>
-        <Link to="/about">About</Link>
-        <Link to="/about">Movies</Link>
-      </LinksWrapper>
+      <StyledLink to="/">
+        <img
+          src={require('../images/Whateverlogo.svg')}
+          height="30px"
+          alt="logo"
+        />
+      </StyledLink>
+      <ul>
+        <li>
+          <StyledLink to="/movies">Movies</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/about">About</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/">Contact</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/">Log In</StyledLink>
+        </li>
+      </ul>
     </NavWrapper>
   );
 };
