@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NavWrapper } from '../elements';
-import { LogoImage } from '../images/logo';
+import { NavWrapper, LinksWrapper } from '../elements';
+import { LogoImage } from '../images';
 
-export const Nav = () => {
+export const Nav = ({ home }) => {
   return (
-    <NavWrapper>
-      <Link to="/">
-        <LogoImage fill="red" width="10rem" />
-      </Link>
-      <div>
+    <NavWrapper home={home}>
+      <LinksWrapper>
+        <Link to="/">
+          <LogoImage />
+        </Link>
+      </LinksWrapper>
+      <LinksWrapper>
         <Link to="/about">About</Link>
-        <Link to="/movies">Movies</Link>
-      </div>
+        <Link to="/about">Movies</Link>
+      </LinksWrapper>
     </NavWrapper>
   );
 };

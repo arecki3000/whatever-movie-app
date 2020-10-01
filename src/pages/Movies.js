@@ -1,11 +1,11 @@
 import React from 'react';
 import { Nav } from '../components';
+import { ContentWrapper } from '../elements';
 
 export const Movies = () => {
   return (
-    <div>
+    <ContentWrapper>
       <Nav />
-      <h1>Movies</h1>
-    </div>
+    </ContentWrapper>
   );
 };

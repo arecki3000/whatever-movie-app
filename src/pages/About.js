@@ -1,11 +1,11 @@
 import React from 'react';
 import { Nav } from '../components';
+import { ContentWrapper } from '../elements';
 
 export const About = () => {
   return (
-    <div>
+    <ContentWrapper>
       <Nav />
-      <h1>About</h1>
-    </div>
+    </ContentWrapper>
   );
 };
