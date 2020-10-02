@@ -1,12 +1,21 @@
 import React from 'react';
-import { HomeContentElement, H1, H2 } from '../elements';
+import { Link } from 'react-router-dom';
+import { HomeContentElement, H1, ButtonHome } from '../elements';
+
+const klik = () => {
+  console.log(process.env.REACT_APP_API_KEY);
+};
+
+console.log(process.env.REACT_APP_API_KEY);
 
 export const HomeContent = () => {
   return (
     <HomeContentElement>
       <div>
         <H1 size="large">Lorem ipsum dolor sit amet consectetur.</H1>
-        <H2 size="medium">Lorem ipsum dolor sit amet consectetur.</H2>
+        <Link to="/movies">
+          <ButtonHome onClick={() => klik()}>Find your movie</ButtonHome>
+        </Link>
       </div>
     </HomeContentElement>
   );

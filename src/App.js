@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { Home, About, Movies } from './pages';
+import { Home, About, Movies, Movie } from './pages';
 import Theme from './themes/theme.js';
 
 const GlobalStyle = createGlobalStyle`
@@ -29,6 +29,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/movie">
+            <Movie />
           </Route>
           <Route path="/">
             <Home />

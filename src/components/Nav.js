@@ -20,7 +20,7 @@ export const Nav = ({ home }) => {
           <StyledLink to="/about">About</StyledLink>
         </li>
         <li>
-          <StyledLink to="/">Contact</StyledLink>
+          <StyledLink to="/movie">Random</StyledLink>
         </li>
         <li>
           <StyledLink to="/">Log In</StyledLink>

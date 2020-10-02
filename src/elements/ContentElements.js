@@ -3,9 +3,13 @@ import styled from 'styled-components';
 export const ContentWrapper = styled.div`
   height: 100vh;
   background: ${(props) => props.theme.colors.light};
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 `;
 
 export const HomeContentElement = styled.div`
+  position: realtive;
   height: 50vh;
   width: 80%;
   margin: auto;
@@ -15,6 +19,8 @@ export const HomeContentElement = styled.div`
   gap: 0;
 
   div {
-    grid-row: 2;
+    display: inline-block;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
   }
 `;

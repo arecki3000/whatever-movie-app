@@ -25,8 +25,10 @@ export const NavWrapper = styled.nav`
       padding: 5px 10px;
       border: 1.3px solid;
       border-radius: 6px;
+      color: rgb(19, 51, 58, 0.2);
       &:hover {
         text-decoration: none;
+        color: rgb(19, 51, 58, 1);
       }
     }
   }
