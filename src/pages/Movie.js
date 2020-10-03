@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Nav } from '../components';
+import { Nav, Footer } from '../components';
 import { ContentWrapper } from '../elements';
 import { getMovie } from '../services';
 import { API_KEY } from '../constants/constants.js';
@@ -32,6 +32,7 @@ export const Movie = () => {
       {movie.isLoaded && <div>{movie.movie.title}</div>}
       {!movie.isLoaded && <div>niezaładowane</div>}
       {hook && <div>hook działa</div>}
+      <Footer />
     </ContentWrapper>
   );
 };
