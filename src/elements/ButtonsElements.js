@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonHome = styled.button`
+export const Button = styled.button`
   cursor: pointer;
   border: 1px solid rgb(77, 66, 84, 0.2);
   padding: 12px 15px;
@@ -12,8 +12,12 @@ export const ButtonHome = styled.button`
   outline: none;
   display: inline-block;
   border-radius: 4px;
-  margin-top: 4rem;
+  margin-top: ${(props) => (props.margin ? props.margin : '')};
   :hover {
     border: 1px solid rgb(77, 66, 84, 1);
+  }
+  a {
+    text-decoration: inherit;
+    color: inherit;
   }
 `;

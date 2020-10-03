@@ -1,3 +1,4 @@
 export * from './Nav';
 export * from './HomeContent';
 export * from './Footer';
+export * from './MovieContent';

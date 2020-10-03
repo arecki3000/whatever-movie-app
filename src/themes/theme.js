@@ -1,7 +1,7 @@
 export default {
   fonts: {
-    main: 'Arbutus Slab, sans-serif',
-    code: 'Roboto Mono, monospace',
+    second: 'texGyreAdventor, sans-serif',
+    main: 'Roboto Mono, monospace',
   },
   colors: {
     dark1: '#13333a',

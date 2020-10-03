@@ -1,37 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { Nav, Footer } from '../components';
+import { Nav, Footer, MovieContent } from '../components';
 import { ContentWrapper } from '../elements';
-import { getMovie } from '../services';
+import { getMovie, getTriler } from '../services';
 import { API_KEY } from '../constants/constants.js';
 
 export const Movie = () => {
   const [movie, setMovie] = useState({
-    movie: {},
+    data: {},
     isLoaded: false,
     error: null,
   });
-  const [hook, setHook] = useState(false);
+  const [trilerLink, setTrilerLink] = useState('');
 
-  const id = 550;
+  const id = 181812;
   useEffect(() => {
     getMovie({ id, API_KEY }).then((res) => {
       setMovie((prevState) => {
         return {
           ...prevState,
-          movie: res,
+          data: res,
           isLoaded: true,
         };
-      }, console.log(movie));
-      setHook(true);
+      });
+    });
+    getTriler({ id, API_KEY }).then((res) => {
+      setTrilerLink(res);
     });
   }, []);
 
   return (
     <ContentWrapper>
       <Nav />
-      {movie.isLoaded && <div>{movie.movie.title}</div>}
-      {!movie.isLoaded && <div>niezaładowane</div>}
-      {hook && <div>hook działa</div>}
+      {!movie.data && <div>Loading...</div>}
+      {movie.data && <MovieContent data={movie.data} link={trilerLink} />}
       <Footer />
     </ContentWrapper>
   );
