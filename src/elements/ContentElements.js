@@ -6,6 +6,9 @@ export const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  @media ${(props) => props.theme.breakpoints.tablet} {
+    margin: 0 auto;
+  }
 `;
 
 export const HomeContentElement = styled.div`
@@ -22,5 +25,16 @@ export const HomeContentElement = styled.div`
     display: inline-block;
     grid-column: 1 / 2;
     grid-row: 1 / 4;
+  }
+`;
+
+export const AboutContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+  @media ${(props) => props.theme.breakpoints.tablet} {
+    width: 90%;
   }
 `;

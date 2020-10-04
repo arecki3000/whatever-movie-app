@@ -10,10 +10,13 @@ export const Movie = () => {
     isLoaded: false,
     error: null,
   });
-  const [trilerLink, setTrilerLink] = useState('');
+  const [trilerLink, setTrilerLink] = useState({});
 
-  const id = 181812;
   useEffect(() => {
+    const id = 1880;
+    getTriler({ id, API_KEY }).then((res) => {
+      setTrilerLink(res);
+    });
     getMovie({ id, API_KEY }).then((res) => {
       setMovie((prevState) => {
         return {
@@ -23,16 +26,15 @@ export const Movie = () => {
         };
       });
     });
-    getTriler({ id, API_KEY }).then((res) => {
-      setTrilerLink(res);
-    });
   }, []);
 
   return (
     <ContentWrapper>
       <Nav />
       {!movie.data && <div>Loading...</div>}
-      {movie.data && <MovieContent data={movie.data} link={trilerLink} />}
+      {movie.data && (
+        <MovieContent data={movie.data} link={trilerLink.results} />
+      )}
       <Footer />
     </ContentWrapper>
   );

@@ -23,7 +23,9 @@ export const Nav = ({ home }) => {
           <StyledLink to="/movie">Random</StyledLink>
         </li>
         <li>
-          <StyledLink to="/">Log In</StyledLink>
+          <StyledLink id="550" to="/">
+            Log In
+          </StyledLink>
         </li>
       </ul>
     </NavWrapper>

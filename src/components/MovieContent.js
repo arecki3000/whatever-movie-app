@@ -11,15 +11,24 @@ import {
 
 export const MovieContent = ({ data, link }) => {
   console.log(link);
-
   return (
     <MovieWrapper>
-      <MovieImage>
-        <img
-          src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
-          alt={`${data.original_title} poster`}
-        />
-      </MovieImage>
+      {data.backdrop_path && (
+        <MovieImage>
+          <img
+            src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
+            alt={`${data.original_title} poster`}
+          />
+        </MovieImage>
+      )}
+      {!data.backdrop_path && (
+        <MovieImage>
+          <img
+            src={require('../images/movie-placeholder.png')}
+            alt={`${data.original_title} poster`}
+          />
+        </MovieImage>
+      )}
       <MovieDescription>
         <P margin="0 0 20px 0">
           {data.genres &&
@@ -47,15 +56,17 @@ export const MovieContent = ({ data, link }) => {
           </H1>
         )}
 
-        <P
-          spacing="1px"
-          margin="0 0 20px 0"
-          size="small"
-          styling="italic"
-          color="dark2"
-        >
-          "{data.tagline}"
-        </P>
+        {data.tagline && (
+          <P
+            spacing="1px"
+            margin="0 0 20px 0"
+            size="small"
+            styling="italic"
+            color="dark2"
+          >
+            "{data.tagline}"
+          </P>
+        )}
 
         <P
           style={{ width: '80%' }}
@@ -73,10 +84,10 @@ export const MovieContent = ({ data, link }) => {
           </Span>
         </P>
         <Span>
-          {link && (
+          {link && link.length > 0 && (
             <Button>
               <a
-                href={`http://youtube.com/watch?v=${link.results[0].key}`}
+                href={`http://youtube.com/watch?v=${link[0].key}`}
                 alt="youtube triler"
                 target="_blank"
                 rel="noopener noreferrer"

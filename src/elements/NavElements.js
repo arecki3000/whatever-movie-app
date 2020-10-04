@@ -31,6 +31,9 @@ export const NavWrapper = styled.nav`
         color: rgb(19, 51, 58, 1);
       }
     }
+    @media ${(props) => props.theme.breakpoints.tablet} {
+      display: none;
+    }
   }
 `;
 
@@ -39,7 +42,4 @@ export const StyledLink = styled(Link)`
   font-family: ${(props) => props.theme.fonts.code};
   font-size: ${(props) => props.theme.spacings.small};
   color: ${(props) => props.theme.colors.dark1};
-  /* &:hover {
-    text-decoration: underline;
-  } */
 `;

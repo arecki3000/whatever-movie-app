@@ -7,6 +7,9 @@ export const FooterElement = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media ${(props) => props.theme.breakpoints.tablet} {
+    flex-direction: column;
+  }
 
   div {
     width: 10rem;
