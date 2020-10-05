@@ -1,13 +1,10 @@
 import React from 'react';
-import { Nav, HomeContent, Footer } from '../components';
-import { ContentWrapper } from '../elements';
+import { Content, HomeContent } from '../components';
 
 export const Home = () => {
   return (
-    <ContentWrapper home={true}>
-      <Nav home={true} />
+    <Content>
       <HomeContent />
-      <Footer />
-    </ContentWrapper>
+    </Content>
   );
 };

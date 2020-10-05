@@ -1,13 +1,10 @@
 import React from 'react';
-import { Nav, Footer, AboutContent } from '../components';
-import { ContentWrapper } from '../elements';
+import { Content, AboutContent } from '../components';
 
 export const About = () => {
   return (
-    <ContentWrapper>
-      <Nav />
+    <Content>
       <AboutContent />
-      <Footer />
-    </ContentWrapper>
+    </Content>
   );
 };

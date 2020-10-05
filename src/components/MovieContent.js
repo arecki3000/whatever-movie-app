@@ -30,7 +30,7 @@ export const MovieContent = ({ data, link }) => {
         </MovieImage>
       )}
       <MovieDescription>
-        <P margin="0 0 20px 0">
+        <P className="genres" margin="0 0 20px 0">
           {data.genres &&
             data.genres.map((genre) => {
               return (

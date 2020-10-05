@@ -38,3 +38,7 @@ export const AboutContentWrapper = styled.div`
     width: 90%;
   }
 `;
+
+export const MoviesGrid = styled.div`
+  min-height: 40%;
+`;

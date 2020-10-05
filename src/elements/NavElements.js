@@ -32,7 +32,11 @@ export const NavWrapper = styled.nav`
       }
     }
     @media ${(props) => props.theme.breakpoints.tablet} {
-      display: none;
+      /* display: none; */
+      justify-content: space-around;
+      flex-direction: column;
+      width: 600px;
+      visibility: hidden;
     }
   }
 `;

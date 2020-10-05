@@ -3,3 +3,5 @@ export * from './HomeContent';
 export * from './Footer';
 export * from './MovieContent';
 export * from './AboutContent';
+export * from './FilterContent';
+export * from './Content';

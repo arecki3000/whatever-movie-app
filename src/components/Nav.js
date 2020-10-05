@@ -20,12 +20,12 @@ export const Nav = ({ home }) => {
           <StyledLink to="/about">About</StyledLink>
         </li>
         <li>
-          <StyledLink to="/movie">Random</StyledLink>
+          <StyledLink id="550" to="/movie">
+            Random
+          </StyledLink>
         </li>
         <li>
-          <StyledLink id="550" to="/">
-            Log In
-          </StyledLink>
+          <StyledLink to="/">Log In</StyledLink>
         </li>
       </ul>
     </NavWrapper>
