@@ -3,7 +3,7 @@ import { Grid, MovieCard } from '../elements';
 import placeholder from '../images/movie-placeholder.png';
 import { Span, StyledLink } from '../elements';
 
-export const MoviesGrid = ({ movies }) => {
+export const MoviesGrid = ({ movies, query }) => {
   const linkStyle = {
     display: 'flex',
     justifyContent: 'space-between',

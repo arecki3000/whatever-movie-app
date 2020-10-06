@@ -1,71 +1,80 @@
 import React from 'react';
-import { FilterWrapper, FilterElement } from '../elements';
+import { FilterWrapper, FilterElement, StyledLabel } from '../elements';
 
-export const Filter = () => {
+export const Filter = ({
+  query,
+  setPopularity,
+  setYear,
+  setScore,
+  setGenre,
+}) => {
+  const { popularity, score, genre, year } = query;
+  console.log({ popularity, score, genre, year });
+
   return (
     <FilterWrapper>
-      <FilterElement>
+      <FilterElement onChange={setPopularity}>
         Have you seen it?
-        <label id="popularity.desc" choice="descending">
+        <StyledLabel id="popularity.desc" choice={popularity}>
           <input type="radio" value="popularity.desc" name="popularity" />{' '}
           Probably...
-        </label>
-        <label id="popularity.asc" choice="ascending">
+        </StyledLabel>
+        <StyledLabel id="popularity.asc" choice={popularity}>
           <input type="radio" value="popularity.asc" name="popularity" /> Give
           me something new.
-        </label>
+        </StyledLabel>
       </FilterElement>
-      <FilterElement>
+      <FilterElement onChange={setYear}>
         How old is it?
-        <label id="1960" choice="old">
+        <StyledLabel id="1960" choice={year}>
           <input type="radio" value="1960" name="year" /> Ancient.
-        </label>
-        <label id="1980" choice="old1">
+        </StyledLabel>
+        <StyledLabel id="1980" choice={year}>
           <input type="radio" value="1980" name="year" /> Classic.
-        </label>
-        <label id="2000" choice="oldwe">
+        </StyledLabel>
+        <StyledLabel id="2000" choice={year}>
           <input type="radio" value="2000" name="year" /> Fairly new.
-        </label>
-        <label id="2020" choice="iksakdn">
+        </StyledLabel>
+        <StyledLabel id="2020" choice={year}>
           <input type="radio" value="2020" name="year" /> Brand new.
-        </label>
+        </StyledLabel>
       </FilterElement>
-      <FilterElement>
+      <FilterElement onChange={setScore}>
         How bad is it?
-        <label id="4" choice="4">
+        <StyledLabel id="4" choice={score}>
           <input type="radio" value="4" name="score" /> So bad it's actualy
           good.
-        </label>
-        <label id="7" choice="6">
+        </StyledLabel>
+        <StyledLabel id="7" choice={score}>
           <input type="radio" value="7" name="score" /> May be bad.
-        </label>
-        <label id="10" choice="6">
+        </StyledLabel>
+        <StyledLabel id="10" choice={score}>
           <input type="radio" value="10" name="score" /> Should be good.
-        </label>
+        </StyledLabel>
       </FilterElement>
-      <FilterElement>
+      <FilterElement onChange={setGenre}>
         What it should be about?
-        <label id="14" choice="14">
+        <StyledLabel id="14" choice={genre}>
           <input type="radio" value="14" name="genre" /> Adventure.
-        </label>
-        <label id="878" choice="123">
+        </StyledLabel>
+        <StyledLabel id="878" choice={genre}>
           <input type="radio" value="878" name="genre" /> Space.
-        </label>
-        <label id="35" choice="123">
+        </StyledLabel>
+        <StyledLabel id="35" choice={genre}>
           <input type="radio" value="35" name="genre" /> Something funny.
-        </label>
-        <label id="27" choice="123">
+        </StyledLabel>
+        <StyledLabel id="27" choice={genre}>
           <input type="radio" value="27" name="genre" /> Scary.
-        </label>
-        <label id="10749" choice="1234">
+        </StyledLabel>
+        <StyledLabel id="10749" choice={genre}>
           <input type="radio" value="10749" name="genre" /> Romance.
-        </label>
-        <label id="16" choice="1234">
+        </StyledLabel>
+        <StyledLabel id="16" choice={genre}>
           <input type="radio" value="16" name="genre" /> Animation.
-        </label>
-        <label id="" choice="1235">
+        </StyledLabel>
+        <StyledLabel id="" choice={genre}>
           <input type="radio" value="" name="genre" /> Whatever.
-        </label>
+        </StyledLabel>
       </FilterElement>
     </FilterWrapper>
   );

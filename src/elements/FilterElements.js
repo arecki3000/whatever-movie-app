@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const FilterWrapper = styled.div`
-  margin-top: 5px;
+  position: absolute;
+  top: 5rem;
+  width: inherit;
+  margin: 0 auto;
   min-height: 30vh;
   display: flex;
   justify-content: space-between;
@@ -18,14 +21,15 @@ export const FilterElement = styled.div`
   input {
     display: none;
   }
-  label {
-    margin-top: 5px;
-    text-decoration: ${(props) =>
-      props.choice === props.id ? 'line-through' : ''};
-    font-weight: 100;
-  }
+
   @media ${(props) => props.theme.breakpoints.tablet} {
     margin: 5px auto 0 auto;
     text-align: center;
   }
+`;
+
+export const StyledLabel = styled.label`
+  margin-top: 5px;
+  text-decoration: ${(props) =>
+    props.id === props.choice ? 'line-through' : ''};
 `;

@@ -17,7 +17,6 @@ export const Movie = (props) => {
       setTrilerLink(res);
     });
     getMovie({ id, API_KEY }).then((res) => {
-      console.log(res);
       setMovie((prevState) => {
         return {
           ...prevState,
