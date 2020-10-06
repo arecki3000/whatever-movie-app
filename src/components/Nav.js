@@ -1,10 +1,19 @@
-import React from 'react';
-// import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { NavWrapper, StyledLink } from '../elements';
 
-export const Nav = ({ home }) => {
+export const Nav = () => {
+  const [open, setOpen] = useState(false);
+
+  const icon = open ? 'close' : 'menu';
+
+  const toggleOpen = () => {
+    setOpen((prevState) => {
+      return !open;
+    });
+  };
+
   return (
-    <NavWrapper home={home}>
+    <NavWrapper>
       <StyledLink to="/">
         <img
           src={require('../images/Whateverlogo.svg')}
@@ -12,22 +21,21 @@ export const Nav = ({ home }) => {
           alt="logo"
         />
       </StyledLink>
-      <ul>
+      <ul className={icon}>
         <li>
           <StyledLink to="/movies">Movies</StyledLink>
         </li>
         <li>
           <StyledLink to="/about">About</StyledLink>
         </li>
-        <li>
-          <StyledLink id="550" to="/movie">
-            Random
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/">Log In</StyledLink>
-        </li>
       </ul>
+      <img
+        height="30px"
+        onClick={() => toggleOpen()}
+        className={icon}
+        src={require(`../images/${icon}.svg`)}
+        alt="menu"
+      />
     </NavWrapper>
   );
 };

@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const FilterWrapper = styled.div`
-  margin: 0 auto;
   margin-top: 5px;
-  height: 30vh;
-  width: 80%;
+  min-height: 30vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  @media ${(props) => props.theme.breakpoints.tablet} {
+    flex-wrap: wrap;
+  }
 `;
 
 export const FilterElement = styled.div`
@@ -22,5 +23,9 @@ export const FilterElement = styled.div`
     text-decoration: ${(props) =>
       props.choice === props.id ? 'line-through' : ''};
     font-weight: 100;
+  }
+  @media ${(props) => props.theme.breakpoints.tablet} {
+    margin: 5px auto 0 auto;
+    text-align: center;
   }
 `;

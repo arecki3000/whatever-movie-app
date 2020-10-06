@@ -10,7 +10,6 @@ import {
 } from '../elements';
 
 export const MovieContent = ({ data, link }) => {
-  console.log(link);
   return (
     <MovieWrapper>
       {data.backdrop_path && (

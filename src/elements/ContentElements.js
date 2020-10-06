@@ -1,21 +1,19 @@
 import styled from 'styled-components';
 
 export const ContentWrapper = styled.div`
-  height: 100vh;
   background: ${(props) => props.theme.colors.light};
+  min-height: 100vh;
+  margin: auto;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  @media ${(props) => props.theme.breakpoints.tablet} {
-    margin: 0 auto;
-  }
 `;
 
 export const HomeContentElement = styled.div`
   position: realtive;
   height: 50vh;
-  width: 80%;
-  margin: auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;

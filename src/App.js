@@ -24,18 +24,10 @@ function App() {
       <ThemeProvider theme={Theme}>
         <GlobalStyle />
         <Switch>
-          <Route path="/movies">
-            <Movies />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/movie">
-            <Movie />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route exact path="/movie/:id" component={Movie} />
+          <Route path="/movies" component={Movies} />
+          <Route path="/about" component={About} />
+          <Route path="/" component={Home} />
         </Switch>
       </ThemeProvider>
     </div>

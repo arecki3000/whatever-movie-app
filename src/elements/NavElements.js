@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const NavWrapper = styled.nav`
-  margin: 0 auto;
-  height: 5rem;
-  width: 80%;
+  max-height: 5rem;
+  min-height: 5rem;
+  min-width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,8 +12,11 @@ export const NavWrapper = styled.nav`
   img {
     fill: ${(props) => props.theme.colors.light};
   }
+  img.menu {
+    display: none;
+  }
   ul {
-    width: 40%;
+    width: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,22 +24,34 @@ export const NavWrapper = styled.nav`
     li:hover {
       text-decoration: underline;
     }
-    li:last-child {
-      padding: 5px 10px;
-      border: 1.3px solid;
-      border-radius: 6px;
-      color: rgb(19, 51, 58, 0.2);
-      &:hover {
-        text-decoration: none;
-        color: rgb(19, 51, 58, 1);
-      }
+  }
+  @media ${(props) => props.theme.breakpoints.tablet} {
+    ul.menu {
+      visibility: hidden;
     }
-    @media ${(props) => props.theme.breakpoints.tablet} {
-      /* display: none; */
+    ul.close {
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      margin: 0 auto;
+      background-color: ${(props) => props.theme.colors.light};
       justify-content: space-around;
       flex-direction: column;
-      width: 600px;
-      visibility: hidden;
+      width: 100%;
+      height: 80%;
+      z-index: 100;
+    }
+    img.menu {
+      display: block;
+      z-index: 1000;
+    }
+    a {
+      font-size: ${(props) => props.theme.spacings.large};
+    }
+  }
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    a {
+      font-size: ${(props) => props.theme.spacings.medium};
     }
   }
 `;
