@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.js": "/whatever-movie-app/static/js/main.e53ab0c7.chunk.js",
+    "main.js.map": "/whatever-movie-app/static/js/main.e53ab0c7.chunk.js.map",
+    "runtime-main.js": "/whatever-movie-app/static/js/runtime-main.63421125.js",
+    "runtime-main.js.map": "/whatever-movie-app/static/js/runtime-main.63421125.js.map",
+    "static/js/2.9dd6512e.chunk.js": "/whatever-movie-app/static/js/2.9dd6512e.chunk.js",
+    "static/js/2.9dd6512e.chunk.js.map": "/whatever-movie-app/static/js/2.9dd6512e.chunk.js.map",
+    "index.html": "/whatever-movie-app/index.html",
+    "precache-manifest.a6c09dbe058ac4c769255e7381a823b8.js": "/whatever-movie-app/precache-manifest.a6c09dbe058ac4c769255e7381a823b8.js",
+    "service-worker.js": "/whatever-movie-app/service-worker.js",
+    "static/js/2.9dd6512e.chunk.js.LICENSE.txt": "/whatever-movie-app/static/js/2.9dd6512e.chunk.js.LICENSE.txt",
+    "static/media/Whatevericon.svg": "/whatever-movie-app/static/media/Whatevericon.00e6ed0b.svg",
+    "static/media/Whateverlogo.svg": "/whatever-movie-app/static/media/Whateverlogo.77ec8623.svg",
+    "static/media/close.svg": "/whatever-movie-app/static/media/close.1c89ac9f.svg",
+    "static/media/facebook.svg": "/whatever-movie-app/static/media/facebook.157c5ef6.svg",
+    "static/media/film-poster-placeholder.png": "/whatever-movie-app/static/media/film-poster-placeholder.d1b4253f.png",
+    "static/media/instagram.svg": "/whatever-movie-app/static/media/instagram.00b5c87d.svg",
+    "static/media/linkedin.svg": "/whatever-movie-app/static/media/linkedin.70dcdf29.svg",
+    "static/media/menu.svg": "/whatever-movie-app/static/media/menu.760ba975.svg",
+    "static/media/movie-placeholder.png": "/whatever-movie-app/static/media/movie-placeholder.2e0c0ac5.png",
+    "static/media/twitter.svg": "/whatever-movie-app/static/media/twitter.1dc0f0dc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63421125.js",
+    "static/js/2.9dd6512e.chunk.js",
+    "static/js/main.e53ab0c7.chunk.js"
+  ]
+}
