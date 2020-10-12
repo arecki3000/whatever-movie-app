@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Content, Filter, MoviesGrid } from '../components';
-import { Button } from '../elements';
 import { getMovies } from '../services';
 import { API_KEY } from '../constants/constants.js';
 
