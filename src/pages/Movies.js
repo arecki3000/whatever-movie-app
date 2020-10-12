@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Content, Filter, MoviesGrid } from '../components';
 import { Button } from '../elements';
 import { getMovies } from '../services';
@@ -16,21 +16,6 @@ export const Movies = () => {
     isLoaded: false,
     error: null,
   });
-
-  const fetchMovies = () => {
-    const { popularity, score, genre, year } = query;
-    getMovies({ API_KEY, popularity, score, genre, year }).then((res) => {
-      console.log(res);
-
-      setMovies((prevState) => {
-        return {
-          ...prevState,
-          data: res,
-          isLoaded: true,
-        };
-      });
-    });
-  };
 
   const setPopularity = (e) => {
     if (e.target.value) {
@@ -67,6 +52,29 @@ export const Movies = () => {
     }
   };
 
+  const fetchMovies = () => {
+    const { popularity, score, genre, year } = query;
+    getMovies({ API_KEY, popularity, score, genre, year }).then((res) => {
+      console.log(res);
+
+      setMovies((prevState) => {
+        return {
+          ...prevState,
+          data: res,
+          isLoaded: true,
+        };
+      });
+    });
+  };
+
+  const fetchMoviesCallback = useCallback(() => {
+    fetchMovies();
+  }, [query]);
+
+  useEffect(() => {
+    fetchMoviesCallback();
+  }, [fetchMoviesCallback]);
+
   return (
     <Content>
       <Filter
@@ -77,9 +85,6 @@ export const Movies = () => {
         setGenre={(e) => setGenre(e)}
         fetchMovies={() => fetchMovies()}
       />
-      <Button margin="4rem" onClick={() => fetchMovies()}>
-        Get Movies
-      </Button>
       {movies.data.results ? (
         <MoviesGrid movies={movies.data.results} />
       ) : (

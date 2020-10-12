@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, MovieCard } from '../elements';
-import placeholder from '../images/movie-placeholder.png';
+import placeholder from '../images/film-poster-placeholder.png';
 import { Span, StyledLink } from '../elements';
 
 export const MoviesGrid = ({ movies, query }) => {
@@ -13,7 +13,7 @@ export const MoviesGrid = ({ movies, query }) => {
   return (
     <Grid>
       {movies.map((movie) => (
-        <MovieCard onClick={() => console.log(movie.id)} key={movie.id}>
+        <MovieCard key={movie.id}>
           <StyledLink
             style={{ linkStyle }}
             to={{ pathname: `/movie/${movie.id}`, id: movie.id }}

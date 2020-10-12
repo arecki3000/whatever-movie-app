@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const FilterWrapper = styled.div`
-  position: absolute;
   top: 5rem;
   width: inherit;
   margin: 0 auto;
@@ -9,8 +8,8 @@ export const FilterWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   @media ${(props) => props.theme.breakpoints.tablet} {
-    flex-wrap: wrap;
   }
 `;
 
@@ -29,7 +28,7 @@ export const FilterElement = styled.div`
 `;
 
 export const StyledLabel = styled.label`
-  margin-top: 5px;
+  margin-top: 10px;
   text-decoration: ${(props) =>
     props.id === props.choice ? 'line-through' : ''};
 `;
